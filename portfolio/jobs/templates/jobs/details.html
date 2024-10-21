@@ -1,16 +1,14 @@
-<h1>Details page</h1>
-{{ job.id }}
+<!--<h1>Details page</h1>-->
+<!--{{ job.id }}-->
 
-<!--<h1>homepage</h1>-->
-<!--{% for job in jobs %}-->
-<!--{{ job.summary }}-->
-<!--{{ job.description }}-->
-<!--{% endfor %}-->
+
+
 
 
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
 {% load static %}
+
   <head><script src="/docs/5.3/assets/js/color-modes.js"></script>
 
     <meta charset="utf-8">
@@ -120,53 +118,28 @@
 
   </head>
   <body>
-
 <main>
 
   <section class="py-5 text-center container">
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
-                <h1 class="fw-light"> BALASUBRAMANIYAN M </h1>
-
-          <img src="{{ job.image.url }}" height="250" width="350"> <br><br>
+                  <h1 class="fw-light">JOB Details</h1>
+        <img src="{{ job.image.url }}" height="250" width="400">
+          <br><br>
         <p class="lead text-body-secondary">{{ job.summary }}</p>
-
-          <a href="{ % url 'home' % } class="btn btn-primary my-2">back</a>
-          <p>
-             {{ job.description }}
-          </p>
+        <p>
+          <a href="{% url 'home' %}" class="btn btn-primary my-2">Back</a>
+        </p>
+          <p>{{ job.description }}</p>
       </div>
     </div>
   </section>
 
-  <div class="album py-5 bg-body-tertiary">
-    <div class="container">
-
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-        {% for job in jobs %}
-        <div class="col">
-          <div class="card shadow-sm">
-            <img src="{{ job.image.url }}" class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></>
-            <div class="card-body">
-              <p class="card-text">{{ job.summary }}</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                </div>
-                <small class="text-body-secondary">9 mins</small>
-              </div>
-            </div>
-          </div>
-        </div>
-        {% endfor %}
-      </div>
-    </div>
-  </div>
 
 </main>
 
-<script src="{% static 'js/bootstrap.bundle.min.js' %}"  crossorigin="anonymous"></script>
+
+<script src="{% static 'js/bootstrap.bondle.min.js' %}"  crossorigin="anonymous"></script>
 
     </body>
 </html>
